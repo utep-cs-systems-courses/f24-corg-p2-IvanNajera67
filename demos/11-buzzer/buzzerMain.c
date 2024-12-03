@@ -3,11 +3,12 @@
 #include "buzzer.h"
 
 int main() {
+    WDTCTL = WDTPW | WDTHOLD;
     configureClocks();
- 
+
     buzzer_init();
-    buzzer_set_period(1000);	/* start buzzing!!! 2MHz/1000 = 2kHz*/
+    buzzer_set_period(1000);    /* start buzzing!!! 2MHz/1000 = 2kHz*/
 
 
-    or_sr(0x18);          // CPU off, GIE on
+    or_sr(0x18);          // CPU off, GIE on                                                                             
 }
